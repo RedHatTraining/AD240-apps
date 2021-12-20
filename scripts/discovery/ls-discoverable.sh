@@ -8,6 +8,7 @@ oc get service --all-namespaces -o json  | jq '.items[]
    )
  | {
      "service-name": .metadata.name,
+     "service-namespace": .metadata.namespace,
      "labels": .metadata.labels,
      "annotations": .metadata.annotations
    } '
