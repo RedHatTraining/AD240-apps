@@ -27,19 +27,19 @@ function getBooks(): Book[] {
   return [
     {
       title: "Frankenstein",
-      author: { name: "Mary Shelley", birthDate: new Date(1797, 7, 30) },
+      author: { name: "Mary Shelley", birthYear: 1797 },
       year: 1818,
       copies: 10
     },
     {
       title: "A Christmas Carol",
-      author: { name: "Charles Dickens", birthDate: new Date(1812, 1, 7) },
+      author: { name: "Charles Dickens", birthYear: 1812 },
       year: 1843,
       copies: 5,
     },
     {
       title: "Pride and Prejudice",
-      author: { name: "Charles Dickens", birthDate: new Date(1775, 11, 16) },
+      author: { name: "Charles Dickens", birthYear: 1775 },
       year: 1813,
       copies: 3,
     },
