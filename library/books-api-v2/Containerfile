@@ -3,7 +3,8 @@ FROM registry.access.redhat.com/ubi8/nodejs-14:1
 COPY . /opt/app-root/src/
 
 RUN cd /opt/app-root/src && \
-    npm install
+    npm i --save-dev @types/node \
+    npm ci --production
 
 EXPOSE 8080
 
