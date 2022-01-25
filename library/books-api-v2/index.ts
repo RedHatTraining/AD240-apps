@@ -1,6 +1,6 @@
 import express from "express";
 import { Book } from "./v2/Book";
-import { BookMapper } from "./BookMapper"
+import { bookToV1 } from "./v1-mappers"
 
 const PORT = parseInt(process.env.PORT ?? "8080");
 
@@ -11,7 +11,7 @@ app.get("/ping", (_req, res) => {
 });
 
 app.get("/api/v1/books", (_req, res) => {
-  res.send(getBooks().map(BookMapper.toV1));
+  res.send(getBooks().map(bookToV1));
 });
 
 app.get("/api/v2/books", (_req, res) => {
