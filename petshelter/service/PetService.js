@@ -18,10 +18,10 @@ exports.addPet = function(body) {
  * Deletes a pet
  *
  * petId Long Pet id to delete
- * api_key String  (optional)
+ * user_key String Your access API Key (optional)
  * no response value expected for this operation
  **/
-exports.deletePet = function(petId,api_key) {
+exports.deletePet = function(petId,user_key) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -33,31 +33,31 @@ exports.deletePet = function(petId,api_key) {
  * Multiple status values can be provided with comma separated strings
  *
  * status List Status values that need to be considered for filter
- * user_key String Your access API Key
+ * user_key String Your access API Key (optional)
  * returns List
  **/
 exports.findPetsByStatus = function(status,user_key) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
-  "photoUrls" : [ "photoUrls", "photoUrls" ],
-  "name" : "doggie",
+  "photoUrls" : [ "photo_1_url", "photo_2_url" ],
+  "name" : "spotty",
   "id" : 0,
   "category" : {
-    "name" : "name",
+    "name" : "dogs",
     "id" : 6
   },
   "tags" : [ {
-    "name" : "name",
+    "name" : "puppy",
     "id" : 1
   }, {
-    "name" : "name",
+    "name" : "healthy",
     "id" : 1
   } ],
   "status" : "available"
 }, {
   "photoUrls" : [ "photoUrls", "photoUrls" ],
-  "name" : "doggie",
+  "name" : "Isidoro",
   "id" : 0,
   "category" : {
     "name" : "name",
@@ -86,9 +86,10 @@ exports.findPetsByStatus = function(status,user_key) {
  * Returns a single pet
  *
  * petId Long ID of pet to return
+ * user_key String Your access API Key (optional)
  * returns Pet
  **/
-exports.getPetById = function(petId) {
+exports.getPetById = function(petId,user_key) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {

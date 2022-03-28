@@ -13,8 +13,8 @@ module.exports.addPet = function addPet (req, res, next, body) {
     });
 };
 
-module.exports.deletePet = function deletePet (req, res, next, petId, api_key) {
-  Pet.deletePet(petId, api_key)
+module.exports.deletePet = function deletePet (req, res, next, petId, user_key) {
+  Pet.deletePet(petId, user_key)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -33,8 +33,8 @@ module.exports.findPetsByStatus = function findPetsByStatus (req, res, next, sta
     });
 };
 
-module.exports.getPetById = function getPetById (req, res, next, petId) {
-  Pet.getPetById(petId)
+module.exports.getPetById = function getPetById (req, res, next, petId, user_key) {
+  Pet.getPetById(petId, user_key)
     .then(function (response) {
       utils.writeJson(res, response);
     })
